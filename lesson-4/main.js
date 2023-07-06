@@ -45,3 +45,11 @@ const addTodolist = (title) => {
     setTasks({...tasks, [todolistId]: []})
 }
 
+const changeStatus = (taskId, newStatus) => {
+    setTasks({...tasks, [todolistId_1]: tasks[todolistId_1].map(t => t.id === taskId ? {...t, isDone: newStatus} : t)})
+}
+
+const removeTask = (todolistId, taskId) => {
+    setTasks({...tasks, [todolistId]: tasks[todolistId].filter(t => t.id !== taskId)})
+}
+
